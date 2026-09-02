@@ -10,19 +10,16 @@ The project demonstrates automated file processing, data quality checks, databas
 
 - Automatic CSV file detection
 - CSV processing using Pandas
-- Column name standardization
 - Duplicate record removal
 - Missing value detection
 - Basic data validation
 - Cleaned CSV output generation
-- MongoDB integration using PyMongo
-- Execution logging
 - Output file verification
 - Error handling
 
 ## ETL Workflow
 
-```text
+```
 CSV Files
     ↓
 File Detection
@@ -37,43 +34,21 @@ Cleaned CSV Output
     ↓
 MongoDB
     ↓
-Execution Logs
+Execution Log 
+```
 
-Dataset
+## Dataset
 
 The pipeline processes three customer-related CSV datasets:
 
-Customer Contracts
-Customer Demo
-Customer Engagements
-Customer Contracts
+- Customer Contracts Link
+- Customer Demo Link
+- Customer Engagements Link
+- Customer Contracts Link
 
-Contains customer contract information such as:
+## Project Structure
 
-Customer ID
-Contract value
-Start date
-End date
-Invoice status
-Payment status
-Customer Demo
-
-Contains customer information such as:
-
-Customer ID
-Customer name
-Employee count
-Office location
-Customer Engagements
-
-Contains customer engagement information such as:
-
-Customer ID
-Number of users
-Percentage of employees
-SSO status
-Launch status
-Project Structure
+```
 Automated-CSV-Data-Processing-MongoDB
 │
 ├── data
@@ -99,137 +74,106 @@ Automated-CSV-Data-Processing-MongoDB
 ├── .gitignore
 ├── README.md
 └── requirements.txt
-Technologies Used
+```
+
+## Technologies Used
 Python
 Pandas
 MongoDB
 PyMongo
 Python-dotenv
 CSV
-Logging
 ETL
-Installation
+
+## Installation
 
 Install the required dependencies:
 
+```
 pip install -r requirements.txt
-MongoDB Configuration
+```
 
+## MongoDB Configuration
+```
 Create a .env file in the project root:
-
-MONGO_URI=mongodb://localhost:27017/
-DATABASE_NAME=customer_data_etl
-
-Make sure MongoDB is running before executing the pipeline.
+MONGO_URI=mongodb:
+DATABASE_NAME=customer_data
+```
 
 Running the Pipeline
 
-Run the following command from the project root:
-
+- Run the following command from the project root:
+```
 python src/main.py
-Data Processing
+```
 
-The pipeline performs the following steps:
+## Data Processing
 
-1. File Detection
+- The pipeline performs the following steps:
 
-Automatically detects CSV files from the data directory.
+### 1. File Detection
 
-2. Data Loading
+- Automatically detects CSV files from the data directory.
 
-Loads CSV files into Pandas DataFrames.
+### 2. Data Loading
 
-3. Column Standardization
+- Loads CSV files into Pandas DataFrames.
 
-Standardizes column names by converting them to lowercase and replacing spaces and special characters.
-
-4. Data Cleaning
+### 3. Data Cleaning
 
 The pipeline:
 
-Removes completely empty rows
-Removes duplicate records
-Converts numeric fields into appropriate numeric types
-Handles CSV encoding issues
+- Removes completely empty rows
+- Removes duplicate records
+- Converts numeric fields into appropriate numeric types
+- Handles CSV encoding issues
 
-5. Data Validation
+### 4. Data Validation
 
-The pipeline checks for missing values and invalid numeric values.
+- The pipeline checks for missing values and invalid numeric values.
 
-For example, missing end_date values in the Customer Contracts dataset are detected and recorded in the application log.
+### 5. Output Generation
 
-6. Output Generation
+- Cleaned datasets are saved in the output directory.
 
-Cleaned datasets are saved in the output directory.
+### 6. MongoDB Integration
 
-7. MongoDB Integration
-
-Processed records are stored in MongoDB using PyMongo.
+- Processed records are stored in MongoDB using PyMongo.
 
 The database contains the following collections:
-
+```
 customer_data_etl
 │
 ├── customer_contracts
 ├── customer_demo
 └── customer_engagements
+```
 
-8. Logging
+### 8. Logging
 
 Pipeline activities are recorded in:
-
+```
 logs/process.log
-
-The log records:
-
-Pipeline start and completion
-CSV files detected
-Records processed
-Validation warnings
-MongoDB connection status
-Output verification
-Processing errors
-Sample Execution
-
-The pipeline successfully processed the three CSV datasets:
-
-Customer Contracts$.csv      10 records
-Customer Demo.csv            10 records
-Customer Engagements.csv     10 records
-----------------------------------------
-Total                        30 records
+```
 
 The cleaned output files were generated and the processed records were synchronized with MongoDB.
 
-Error Handling
+## Error Handling
 
 The pipeline handles common processing issues such as:
 
 CSV encoding errors
-Missing values
-Invalid numeric values
-MongoDB connection failures
-MongoDB insertion failures
-File processing errors
+- Missing values
+- Invalid numeric values
+- MongoDB connection failures
+- MongoDB insertion failures
+- File processing errors
 
 Errors and warnings are recorded in the application log for troubleshooting.
 
 Output Verification
 
 After processing each CSV file, the pipeline verifies that the cleaned output file has been successfully generated.
-
-Example:
-
-Output verification successful:
-customer_contracts_cleaned.csv
-Future Improvements
-MongoDB upsert support for duplicate-safe reprocessing
-Automated scheduled execution
-Detailed validation reports
-Email notifications for pipeline failures
-Support for additional input formats
-Retry mechanism for temporary database failures
-
 
 Author
 
