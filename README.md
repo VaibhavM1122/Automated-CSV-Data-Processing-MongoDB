@@ -41,10 +41,9 @@ Execution Log
 
 The pipeline processes three customer-related CSV datasets:
 
-- Customer Contracts Link
-- Customer Demo Link
-- Customer Engagements Link
-- Customer Contracts Link
+- Customer Contracts [Link](https://github.com/VaibhavM1122/Automated-CSV-Data-Processing-MongoDB/blob/main/data/Customer%20Contracts%24.csv)
+- Customer Demo [Link](https://github.com/VaibhavM1122/Automated-CSV-Data-Processing-MongoDB/blob/main/data/Customer%20Demo.csv)
+- Customer Engagements [Link](https://github.com/VaibhavM1122/Automated-CSV-Data-Processing-MongoDB/blob/main/data/Customer%20Engagements.csv)
 
 ## Project Structure
 
