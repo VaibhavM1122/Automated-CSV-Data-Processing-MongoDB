@@ -2,7 +2,7 @@
 
 ## Overview
 
-A Python-based ETL pipeline that automates the processing of customer CSV files, performs data cleaning and validation, generates cleaned output files, and stores processed data in MongoDB.
+A Python-based ETL pipeline that automates the processing of  CSV files, performs data cleaning and validation, generates cleaned output files, and stores processed data in MongoDB.
 
 The project demonstrates automated file processing, data quality checks, database integration, and output verification.
 
@@ -105,76 +105,3 @@ Running the Pipeline
 ```
 python src/main.py
 ```
-
-## Data Processing
-The pipeline performs the following steps:
-
-### 1. File Detection
-
-- Automatically detects CSV files from the data directory.
-
-### 2. Data Loading
-
-- Loads CSV files into Pandas DataFrames.
-
-### 3. Data Cleaning
-
-The pipeline:
-
-- Removes completely empty rows
-- Removes duplicate records
-- Converts numeric fields into appropriate numeric types
-- Handles CSV encoding issues
-
-### 4. Data Validation
-
-- The pipeline checks for missing values and invalid numeric values.
-
-### 5. Output Generation
-
-- Cleaned datasets are saved in the output directory.
-
-### 6. MongoDB Integration
-
-- Processed records are stored in MongoDB using PyMongo.
-
-The database contains the following collections:
-```
-customer_data_etl
-│
-├── customer_contracts
-├── customer_demo
-└── customer_engagements
-```
-
-### 7. Logging
-
-Pipeline activities are recorded in:
-```
-logs/process.log
-```
-
-The cleaned output files were generated and the processed records were synchronized with MongoDB.
-
-## Error Handling
-
-The pipeline handles common processing issues such as:
-
-CSV encoding errors
-- Missing values
-- Invalid numeric values
-- MongoDB connection failures
-- MongoDB insertion failures
-- File processing errors
-
-Errors and warnings are recorded in the application log for troubleshooting.
-
-## Output Verification
-
-After processing each CSV file, the pipeline verifies that the cleaned output file has been successfully generated.
-
-### Author
-
-Vaibhav Mahale
-- [LinkedIn](https://www.linkedin.com/in/vaibhavm1122/)
-- [GitHub](https://github.com/VaibhavM1122)
