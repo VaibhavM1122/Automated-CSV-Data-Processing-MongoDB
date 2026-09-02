@@ -4,7 +4,7 @@
 
 A Python-based ETL pipeline that automates the processing of customer CSV files, performs data cleaning and validation, generates cleaned output files, and stores processed data in MongoDB.
 
-The project demonstrates automated file processing, data quality checks, database integration, logging, and output verification.
+The project demonstrates automated file processing, data quality checks, database integration, and output verification.
 
 ## Features
 
@@ -77,13 +77,13 @@ Automated-CSV-Data-Processing-MongoDB
 ```
 
 ## Technologies Used
-Python
-Pandas
-MongoDB
-PyMongo
-Python-dotenv
-CSV
-ETL
+- Python
+- Pandas
+- MongoDB
+- PyMongo
+- Python-dotenv
+- CSV
+- ETL
 
 ## Installation
 
@@ -108,8 +108,7 @@ python src/main.py
 ```
 
 ## Data Processing
-
-- The pipeline performs the following steps:
+The pipeline performs the following steps:
 
 ### 1. File Detection
 
@@ -149,7 +148,7 @@ customer_data_etl
 └── customer_engagements
 ```
 
-### 8. Logging
+### 7. Logging
 
 Pipeline activities are recorded in:
 ```
@@ -171,10 +170,12 @@ CSV encoding errors
 
 Errors and warnings are recorded in the application log for troubleshooting.
 
-Output Verification
+## Output Verification
 
 After processing each CSV file, the pipeline verifies that the cleaned output file has been successfully generated.
 
-Author
+### Author
 
 Vaibhav Mahale
+- [LinkedIn](https://www.linkedin.com/in/vaibhavm1122/)
+- [GitHub](https://github.com/VaibhavM1122)
